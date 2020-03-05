@@ -16,13 +16,13 @@
     function image_onclick() {
         var arrImage = new Array();
         var number = 48;
-        for (var i=1; i<=number; i++) {
-            arrImage[i-1]="img/img ("+i+").jpg";
+        for (var i = 1; i <= number; i++) {
+            arrImage[i - 1] = "img/img (" + i + ").jpg";
         }
         var imgSource = document.targetImg;
-        var intRandom = Math.round(Math.random() * (number-1));
+        var intRandom = Math.round(Math.random() * (number - 1));
         while (imgSource.src.indexOf(arrImage[intRandom]) != -1) {
-            intRandom = Math.round(Math.random() * (number-1));
+            intRandom = Math.round(Math.random() * (number - 1));
         }
         imgSource.src = arrImage[intRandom];
     }
@@ -32,6 +32,10 @@
 
 <body>
     <h1>재밌는 얘기 좀 해봐</h1>
+    <p>이미지를 클릭하면 랜덤으로 나옵니다.</p>
+    <p>똑같은 걸 몇 번씩 보셨다면 그만볼 때 입니다.</p>
+
+
     <IMAGE name="targetImg" src='img/img (1).jpg' onclick="image_onclick()" style="width: 90%;">
 </body>
 
