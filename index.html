@@ -11,7 +11,27 @@
         rel="stylesheet">
 </head>
 
+<script language="javascript">
+
+    function image_onclick() {
+        var arrImage = new Array();
+        for (var i=1; i<=5; i++) {
+            arrImage[i-1]="img/img ("+i+").jpg";
+        }
+        var imgSource = document.targetImg;
+        var intRandom = Math.round(Math.random() * 4);
+        while (imgSource.src.indexOf(arrImage[intRandom]) != -1) {
+            intRandom = Math.round(Math.random() * 4);
+        }
+        imgSource.src = arrImage[intRandom];
+    }
+
+
+</script>
+
 <body>
     <h1>재밌는 얘기 좀 해봐</h1>
-
+    <IMAGE name="targetImg" src='img/img (1).jpg' onclick="image_onclick()" style="width: 70%;">
 </body>
+
+</html>
